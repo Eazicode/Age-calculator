@@ -43,7 +43,7 @@ section {
   padding-left: 5px;
   color: black;
 }
-.display-error {
+.display-error, .display-error-month {
   font-size: 10px;
   color: red;
   text-align: left;

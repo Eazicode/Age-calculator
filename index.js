@@ -1,5 +1,6 @@
 let inputField = document.querySelectorAll('.input-style');
 let displayError = document.querySelector('.display-error');
+let displayErrorMonth = document.querySelector('.display-error-month')
 let label = document.querySelectorAll('.label');
 let inputYear = document.querySelector('#js-year');
 let inputMonth = document.querySelector('#js-month')
@@ -9,7 +10,7 @@ let clearMonth = document.querySelectorAll('.js-span-month')
 let displayYear = document.querySelector('.js-display-year')
 let displayMonth = document.querySelector('.js-display-month')
 
-function fillInputField() {
+function calculateAge() {
     for (let i = 0; i < inputField.length && label.length; i++) {
       if (inputField[i].value === '') {
         inputField[i].style.border = '1px solid red';
@@ -34,29 +35,48 @@ function fillInputField() {
 
 }
 
+let month = new Date().getMonth()
 
 function calcualateYear() {
   let year = new Date().getFullYear();
-  if (inputYear.value !== '') {
-    for (let i = 0; i < clearYear.length; i++) {
-      clearYear[i].style.display = 'none'
-      displayYear.innerHTML = `${year - inputYear.value}`
+  if (inputMonth.value > 0 && inputMonth.value <= 12) {
+    if (inputMonth.value - 1 > month) {
+      if (inputYear.value !== '') {
+        for (let i = 0; i < clearYear.length; i++) {
+          clearYear[i].style.display = 'none'
+          displayYear.innerHTML = `${(year - inputYear.value) - 1}`
+        }
+      } 
+    } 
+    if (inputMonth.value - 1 <= month) {
+      if (inputYear.value !== '') {
+        for (let i = 0; i < clearYear.length; i++) {
+          clearYear[i].style.display = 'none'
+          displayYear.innerHTML = `${year - inputYear.value}`
+        }
+      } 
     }
   }
 }
 
 function calcualateMonth() {
-  let month = new Date().getMonth()
-  let monthAnswer = (inputMonth.value - 1) - month;
-
-  if (inputMonth !== '') {
-    for(let i = 0; i < clearMonth.length; i++) {
-      clearMonth[i].style.display = 'none'
-      displayMonth.innerHTML = `${monthAnswer }`
-
-      if (monthAnswer <  0) {
-        displayMonth.innerHTML = Math.abs(monthAnswer)
+  if (inputMonth.value > 0 && inputMonth.value <= 12) {
+    if (inputMonth !== '' && inputMonth.value - 1 > month) {
+      for(let i = 0; i < clearMonth.length; i++) {
+        clearMonth[i].style.display = 'none'
+        displayMonth.innerHTML = `${12 - (inputMonth.value - 1) + month }`
+        displayErrorMonth.innerHTML = ''
       }
     }
+    else if (inputMonth !== '' && inputMonth.value - 1 <= month) {
+      for(let i = 0; i < clearMonth.length; i++) {
+        clearMonth[i].style.display = 'none'
+        displayMonth.innerHTML = `${month - (inputMonth.value - 1)}`
+        displayErrorMonth.innerHTML = ''
+      }
+    } 
+  }
+  else {
+    displayErrorMonth.innerHTML = 'Enter a valid month'
   }
 }
