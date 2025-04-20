@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- <h3>This is my Age Calculator Project</h3> -->
+
+  <h1>Age Calculator</h1>
+
+  <section>
+    <div>
+      <div class="container">
+
+        <div>
+          <div class="label">DAY</div>
+          <input class="input-style" id="js-date" type="text" required placeholder="DD">
+        </div>
+  
+        <div>
+          <div class="label">MONTH</div>
+          <input class="input-style" id="js-month"  type="text" placeholder="MM">
+        </div>
+  
+        <div>
+          <div class="label">YEAR</div>
+          <input class="input-style" id="js-year"  type="text" placeholder="YYYY">
+        </div> 
+      </div>
+      <p class="display-error"></p>
+  
+      <div class="button-section">
+        <div id="line"></div>
+        <button onclick="
+        fillInputField()" type="submit">
+          <img width="25px" src="assets\images\icon-arrow.svg" alt="">
+        </button>
+      </div>
+  
+      <div class="display-year">
+        <p class="js-display-year"></p>
+        <span class="span-line js-span-year"></span>
+        <span class="span-line js-span-year" ></span>
+        <span class="span-text">years</span>
+      </div>
+
+      <div class="display-year">
+        <p class="js-display-month"></p>
+        <span class="span-line js-span-month"></span>
+        <span class="span-line js-span-month"></span>
+        <span class="span-text">months</span>
+      </div>
+  
+      <div class="display-year">
+        <span class="span-line"></span>
+        <span class="span-line"></span>
+        <span class="span-text">days</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="index.js"></script>
+</body>
+</html>
