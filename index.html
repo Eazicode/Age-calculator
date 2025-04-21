@@ -17,21 +17,22 @@
 
         <div>
           <div class="label">DAY</div>
-          <input class="input-style" id="js-date" type="text" required placeholder="DD">
+          <input class="input-style" id="js-date" type="text" required placeholder="DD" onkeydown="onKeydown(event)">
         </div>
   
         <div>
           <div class="label">MONTH</div>
-          <input class="input-style" id="js-month"  type="text" placeholder="MM">
+          <input class="input-style" id="js-month"  type="text" placeholder="MM" onkeydown="onKeydown(event)">
         </div>
   
         <div>
           <div class="label">YEAR</div>
-          <input class="input-style" id="js-year"  type="text" placeholder="YYYY">
+          <input class="input-style" id="js-year"  type="text" placeholder="YYYY" onkeydown="onKeydown(event)">
         </div> 
       </div>
       <p class="display-error"></p>
       <p class="display-error-month"></p>
+      <p class="display-error-day"></p>
   
       <div class="button-section">
         <div id="line"></div>
@@ -56,8 +57,9 @@
       </div>
   
       <div class="display-year">
-        <span class="span-line"></span>
-        <span class="span-line"></span>
+        <p class="js-display-day"></p>
+        <span class="span-line js-span-day"></span>
+        <span class="span-line js-span-day"></span>
         <span class="span-text">days</span>
       </div>
     </div>

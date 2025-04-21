@@ -43,7 +43,7 @@ section {
   padding-left: 5px;
   color: black;
 }
-.display-error, .display-error-month {
+.display-error, .display-error-month, .display-error-day {
   font-size: 10px;
   color: red;
   text-align: left;
@@ -74,7 +74,7 @@ button {
   display: flex;
   align-items: center;
 }
-.js-display-year, .js-display-month{
+.js-display-year, .js-display-month, .js-display-day{
   color: hsl(259, 100%, 65%);
   font-size: 40px;
   font-weight: 900;
